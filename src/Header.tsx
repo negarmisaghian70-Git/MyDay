@@ -1,7 +1,10 @@
 import './Header.css'
+import { useState } from 'react'
 
 
 function Header() {
+
+  const [isDark, setIsDark] = useState(false);
 
   return (
     <header className='header'>
@@ -10,7 +13,8 @@ function Header() {
           <h2>Good Evening Negar 🖐</h2>
           <p>Plan your day, your way</p>
       </div>
-      <p>🌙</p>
+      <button className='theme-button' onClick={() => setIsDark(!isDark)}>
+      {isDark ? '🌞' : '🌙'}</button>
       </header>
   )
 }
