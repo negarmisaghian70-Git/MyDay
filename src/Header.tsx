@@ -1,11 +1,11 @@
 import './Header.css'
-import { useState } from 'react'
 
+type HeaderProps = {
+  isDark: boolean
+  setIsDark: (value: boolean) => void
+}
 
-function Header() {
-
-  const [isDark, setIsDark] = useState(false);
-
+function Header({isDark, setIsDark} : HeaderProps) {
   return (
     <header className='header'>
       <div>
