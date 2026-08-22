@@ -6,7 +6,7 @@ function Task() {
   const [tasks, setTasks] = useState<string[]>([])
 
   return (
-      <section className='task'>
+      <section className='tasks'>
           <h2>Today's Task</h2>
           <p>No Task Yet</p>
           <input type="text" value={task} 
@@ -16,7 +16,12 @@ function Task() {
             setTask('')
             }}
             >Add Task</button>
-          {tasks.map((task, index) => (<p key={index}>{task}</p>))}
+          {tasks.map((task, index) => (
+            <div key={index}>
+              <p>{task}</p>
+              <button onClick={() => { if(task.trim() !== '') setTasks(tasks.filter((_, i) => i !== index))}}>Delete</button>
+            </div>
+          ))}
       </section>
   )
 }

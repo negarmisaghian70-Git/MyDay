@@ -1,4 +1,8 @@
-.task {
+.tasks {
   padding: 20px;
 }
-
+.tasks > div {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
